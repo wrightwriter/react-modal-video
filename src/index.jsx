@@ -135,7 +135,12 @@ export default class ModalVideo extends React.Component {
                       this.props.channel !== 'custom' && <iframe width='460' height='230' src={this.getVideoUrl(this.props, this.props.videoId)} frameBorder='0' allow={'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'} allowFullScreen={this.props.allowFullScreen} tabIndex='-1' /> 
                     }
                     {
-                      this.props.channel === 'custom'  && <video width='460' height='230' src={this.getVideoUrl(this.props, this.props.videoId)} frameBorder='0' allow={'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'} allowFullScreen={this.props.allowFullScreen} tabIndex='-1' />
+                        this.props.channel === 'custom'  && 
+                      <iframe width='460' height='230' frameBorder='0' allowFullScreen={this.props.allowFullScreen} tabIndex='-1'>
+                        <video width='460' height='230'  frameBorder='0' autoplay loop muted playsinline allowFullScreen={this.props.allowFullScreen} tabIndex='-1' >
+                          <source src={this.getVideoUrl(this.props, this.props.videoId)} ></source>
+                        </video>
+                      </iframe>
                     }
                   </div>
                 </div>
