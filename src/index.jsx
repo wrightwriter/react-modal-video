@@ -132,15 +132,16 @@ export default class ModalVideo extends React.Component {
                       this.props.children
                     }
                     {
-                      this.props.channel !== 'custom' && <iframe width='460' height='230' src={this.getVideoUrl(this.props, this.props.videoId)} frameBorder='0' allow={'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'} allowFullScreen={this.props.allowFullScreen} tabIndex='-1' /> 
+                      this.props.channel !== 'custom' && <iframe width='460' height='230' src={this.getvideourl(this.props, this.props.videoid)} frameBorder='0' allow={'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'} allowFullScreen={this.props.allowFullScreen} tabIndex='-1' /> 
                     }
                     {
                         this.props.channel === 'custom'  && 
-                      <iframe width='460' height='230' frameBorder='0' allowFullScreen={this.props.allowFullScreen} tabIndex='-1'>
-                        <video width='460' height='230'  frameBorder='0' autoplay loop muted playsinline allowFullScreen={this.props.allowFullScreen} tabIndex='-1' >
+                        <video width='460' height='230'  frameBorder='0' autoPlay loop muted playsInline allowFullScreen={this.props.allowFullScreen} tabIndex='-1' >
                           <source src={this.getVideoUrl(this.props, this.props.videoId)} ></source>
+                          {/* <source type={ "video/" + this.getvideourl(this.props, this.props.videoid).split(".")[this.getvideourl(this.props, this.props.videoid).split(".").length - 1]} src={this.getVideoUrl(this.props, this.props.videoId)} ></source> */}
                         </video>
-                      </iframe>
+                      // <iframe width='460' height='230' frameBorder='0' allowFullScreen={this.props.allowFullScreen} tabIndex='-1'>
+                      // </iframe>
                     }
                   </div>
                 </div>

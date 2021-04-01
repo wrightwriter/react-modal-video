@@ -89,7 +89,7 @@ $backdrop-color: rgba(0, 0, 0, .5);
 	-o-transition: -o-transform $animation-speed $animation-function;
 	transition: transform $animation-speed $animation-function;
 
-	& iframe {
+	& iframe,video {
 		position: absolute;
 		top: 0;
 		left: 0;
