@@ -129,14 +129,13 @@ export default class ModalVideo extends React.Component {
                   <div className={this.props.classNames.modalVideoIframeWrap} style={style}>
                     <button className={this.props.classNames.modalVideoCloseBtn} aria-label={this.props.aria.dismissBtnMessage} ref={node => { this.modalbtn = node; }} onKeyDown={this.updateFocus} />
                     {
-                      this.props.children ||
-                      (
-                        opt.channel !== custom  && <iframe width='460' height='230' src={this.getVideoUrl(this.props, this.props.videoId)} frameBorder='0' allow={'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'} allowFullScreen={this.props.allowFullScreen} tabIndex='-1' />
-                      ) 
-                      || 
-                      (
-                        opt.channel === custom  && <video width='20' height='230' src={this.getVideoUrl(this.props, this.props.videoId)} frameBorder='0' allow={'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'} allowFullScreen={this.props.allowFullScreen} tabIndex='-1' />
-                      ) 
+                      this.props.children
+                    }
+                    {
+                      this.props.channel !== 'custom' && <iframe width='460' height='230' src={this.getVideoUrl(this.props, this.props.videoId)} frameBorder='0' allow={'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'} allowFullScreen={this.props.allowFullScreen} tabIndex='-1' /> 
+                    }
+                    {
+                      this.props.channel === 'custom'  && <video width='460' height='230' src={this.getVideoUrl(this.props, this.props.videoId)} frameBorder='0' allow={'accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture'} allowFullScreen={this.props.allowFullScreen} tabIndex='-1' />
                     }
                   </div>
                 </div>
